@@ -1,0 +1,244 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* ==========================================================================
+   Tailwind v4 theme extensions
+   @theme inline maps source tokens into Tailwind's theme namespaces.
+   Values are resolved from tokens.css at build time — no self-references.
+   ========================================================================== */
+@theme inline {
+  /* Colors — available as bg-bg, bg-surface, text-text-primary, etc. */
+  --color-bg:             var(--token-color-bg);
+  --color-surface:        var(--token-color-surface);
+  --color-border:         var(--token-color-border);
+  --color-text-primary:   var(--token-color-text-primary);
+  --color-text-secondary: var(--token-color-text-secondary);
+  --color-accent:           var(--token-color-accent);
+  --color-accent-hover:     var(--token-color-accent-hover);
+  --color-accent-secondary: var(--token-color-accent-secondary);
+  --color-accent-cyan:      var(--token-color-accent-cyan);
+
+  /* Fonts — available as font-sans, font-mono */
+  --font-sans: var(--token-font-sans);
+  --font-mono: var(--token-font-mono);
+
+  /* Spacing — available as pt-section, mt-section, py-section, etc. */
+  --spacing-section: var(--token-space-section);
+
+  /* Border radius — available as rounded-card, rounded-tag */
+  --radius-card: var(--token-radius-card);
+  --radius-tag:  var(--token-radius-tag);
+}
+
+/* ==========================================================================
+   Subtle creative styling utilities
+   Content-agnostic classes applied in components for a more distinctive,
+   still-professional look. No layout/content changes.
+   ========================================================================== */
+
+/* Hero background: soft blue→violet wash with a second accent for depth.
+   Kept light and readable — low alpha, never dark or heavily saturated. */
+.hero-gradient {
+  background-image:
+    radial-gradient(
+      60% 85% at 12% -5%,
+      color-mix(in srgb, var(--token-color-accent) 14%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      55% 75% at 98% 8%,
+      color-mix(in srgb, var(--token-color-accent-secondary) 12%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      45% 65% at 85% 110%,
+      color-mix(in srgb, var(--token-color-accent-cyan) 8%, transparent),
+      transparent 70%
+    );
+}
+
+/* Primary CTA: subtle blue→violet gradient. */
+.cta-gradient {
+  background-image: linear-gradient(
+    135deg,
+    var(--token-color-accent) 0%,
+    var(--token-color-accent-secondary) 100%
+  );
+}
+.cta-gradient:hover {
+  background-image: linear-gradient(
+    135deg,
+    var(--token-color-accent-hover) 0%,
+    var(--token-color-accent-secondary) 100%
+  );
+}
+
+/* Short gradient line marker placed under/next to section headings. */
+.heading-marker {
+  position: relative;
+}
+.heading-marker::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 4px;
+  margin-top: 0.625rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--token-color-accent) 55%, transparent) 0%,
+    color-mix(in srgb, var(--token-color-accent-secondary) 55%, transparent) 100%
+  );
+}
+
+/* Project card hover: slightly stronger shadow, small lift, accent border.
+   A thin blue→violet gradient edge runs along the top of each card. */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--token-color-accent) 45%, transparent) 0%,
+    color-mix(in srgb, var(--token-color-accent-secondary) 45%, transparent) 100%
+  );
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--token-color-accent) 45%, var(--token-color-border));
+  box-shadow:
+    0 10px 25px -12px color-mix(in srgb, var(--token-color-accent) 40%, transparent);
+}
+
+/* Skill chip hover: very subtle accent tint. */
+.skill-chip {
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease;
+}
+.skill-chip:hover {
+  color: var(--token-color-accent);
+  border-color: color-mix(in srgb, var(--token-color-accent) 40%, var(--token-color-border));
+  background-color: color-mix(in srgb, var(--token-color-accent) 6%, transparent);
+}
+
+/* Profile image: soft accent border + subtle glow. */
+.profile-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--token-color-accent) 30%, transparent),
+    0 12px 30px -14px color-mix(in srgb, var(--token-color-accent-secondary) 50%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .skill-chip {
+    transition: none;
+  }
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* Skills category label: subtle blue/violet accent treatment. */
+.skill-category-label {
+  color: var(--token-color-accent);
+}
+
+/* Current Focus card: thin gradient top edge + light tint/shadow on hover. */
+.focus-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+.focus-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--token-color-accent) 45%, transparent) 0%,
+    color-mix(in srgb, var(--token-color-accent-secondary) 45%, transparent) 100%
+  );
+}
+.focus-card:hover {
+  border-color: color-mix(in srgb, var(--token-color-accent) 35%, var(--token-color-border));
+  background-color: color-mix(in srgb, var(--token-color-accent) 4%, var(--token-color-surface));
+  box-shadow:
+    0 10px 25px -14px color-mix(in srgb, var(--token-color-accent-secondary) 40%, transparent);
+}
+
+/* Education & Experience: subtle blue→violet vertical timeline line. */
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--token-color-accent) 40%, transparent) 0%,
+    color-mix(in srgb, var(--token-color-accent-secondary) 40%, transparent) 100%
+  );
+}
+/* Small accent dot at the top of each timeline entry. */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--token-color-accent) 55%, transparent) 0%,
+    color-mix(in srgb, var(--token-color-accent-secondary) 55%, transparent) 100%
+  );
+  box-shadow: 0 0 0 3px var(--token-color-surface);
+}
+
+/* Contact: very subtle blue/violet tinted panel to close the page. */
+.contact-panel {
+  background-image: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--token-color-accent) 6%, var(--token-color-surface)) 0%,
+    color-mix(in srgb, var(--token-color-accent-secondary) 7%, var(--token-color-surface)) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--token-color-accent) 15%, var(--token-color-border));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-card {
+    transition: none;
+  }
+}
+
+/* Extremely light section tints (used sparingly on one or two sections). */
+.section-tint-blue {
+  background-color: #eff6ff;
+}
+.section-tint-violet {
+  background-color: #f5f3ff;
+}
