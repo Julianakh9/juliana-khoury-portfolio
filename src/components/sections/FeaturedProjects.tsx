@@ -25,10 +25,17 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               key={project.title}
               className="project-card flex flex-col gap-4 rounded-card border border-border bg-surface p-6"
             >
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-text-primary">
-                {project.title}
-              </h3>
+              {/* Title and optional status badge */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <h3 className="text-lg font-semibold text-text-primary">
+                  {project.title}
+                </h3>
+                {project.status && (
+                  <span className="inline-flex items-center rounded-tag border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent-hover">
+                    {project.status}
+                  </span>
+                )}
+              </div>
 
               {/* Description */}
               <p className="text-sm text-text-secondary leading-relaxed">
@@ -38,7 +45,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               {/* Optional extended body */}
               {project.body && (
                 <div
-                  className="text-sm leading-relaxed text-text-secondary"
+                  className="markdown-content text-sm leading-relaxed text-text-secondary"
                   dangerouslySetInnerHTML={{ __html: project.body }}
                 />
               )}

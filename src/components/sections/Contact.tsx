@@ -50,7 +50,7 @@ export default function Contact({
         </a>
 
         {/* Secondary: GitHub and LinkedIn */}
-        <ul className="mt-8 flex items-center gap-6 list-none">
+        <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 list-none">
           <li>
             <a
               href={githubUrl}
@@ -96,8 +96,8 @@ export default function Contact({
             </a>
           </li>
           {email && (
-            <li>
-              <span className="flex items-center gap-2 text-sm text-text-secondary">
+            <li className="max-w-full">
+              <span className="flex min-w-0 items-center gap-2 text-sm text-text-secondary [overflow-wrap:anywhere]">
                 {/* Email icon */}
                 <svg
                   width="20"

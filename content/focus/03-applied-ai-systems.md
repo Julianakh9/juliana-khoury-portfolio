@@ -1,5 +1,5 @@
 ---
-title: "Applied AI Systems"
+title: "Applied AI"
 order: 3
 ---
 

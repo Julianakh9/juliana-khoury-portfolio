@@ -46,6 +46,7 @@ export const ProjectFrontmatterSchema = z.object({
   technologies: z.array(z.string()),
   demoUrl: z.string().url().optional(),
   repoUrl: z.string().url().optional(),
+  status: z.literal("In Progress").optional(),
 }).strict();
 
 export const ProjectSchema = ProjectFrontmatterSchema.extend({

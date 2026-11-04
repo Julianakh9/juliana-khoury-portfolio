@@ -242,3 +242,10 @@
 .section-tint-violet {
   background-color: #f5f3ff;
 }
+
+/* Rendered Markdown blocks: Tailwind's reset removes paragraph margins, so
+   restore a modest gap between consecutive paragraphs. Scoped to this class
+   only; relative to each block's own font size. */
+.markdown-content p + p {
+  margin-top: 1em;
+}

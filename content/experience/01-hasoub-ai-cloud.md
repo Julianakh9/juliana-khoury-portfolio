@@ -1,5 +1,5 @@
 ---
-title: "Junior Software Engineer — AI & Cloud Project (Project-based)"
+title: "Junior Software Engineer — AI Platform (Project-based)"
 organization: "Hasoub Labs"
 startDate: "2026-08"
 endDate: "Present"

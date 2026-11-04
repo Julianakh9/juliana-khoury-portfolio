@@ -37,7 +37,7 @@ export default function AboutMe({ body, profileImage, name }: AboutMeProps) {
 
           {/* Narrative */}
           <div
-            className="flex-1 text-base leading-relaxed text-text-secondary"
+            className="markdown-content flex-1 text-base leading-relaxed text-text-secondary"
             dangerouslySetInnerHTML={{ __html: body }}
           />
         </div>

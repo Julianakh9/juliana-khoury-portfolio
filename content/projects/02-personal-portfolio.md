@@ -1,7 +1,7 @@
 ---
 title: "Personal Portfolio Website"
 description: "A content-driven professional portfolio built with spec-driven development, a structured content layer, reusable components, and static deployment in mind."
-order: 3
+order: 4
 technologies:
   - "Next.js"
   - "TypeScript"

@@ -1,7 +1,7 @@
 ---
 title: "Open-Source Contribution Practice — Sashiko"
 description: "Hands-on work inside an existing Rust codebase focused on understanding behavior, reproducing issues, adding targeted tests, and practicing a real GitHub contribution workflow."
-order: 4
+order: 5
 technologies:
   - "Rust"
   - "Git"

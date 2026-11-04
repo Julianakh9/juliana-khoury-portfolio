@@ -63,7 +63,7 @@ export default function EducationExperience({
                     />
                   </div>
                   <div
-                    className="text-sm leading-relaxed text-text-secondary"
+                    className="markdown-content text-sm leading-relaxed text-text-secondary"
                     dangerouslySetInnerHTML={{ __html: entry.body }}
                   />
                 </li>
@@ -102,7 +102,7 @@ export default function EducationExperience({
                 </div>
                 {entry.body && (
                   <div
-                    className="text-sm leading-relaxed text-text-secondary"
+                    className="markdown-content text-sm leading-relaxed text-text-secondary"
                     dangerouslySetInnerHTML={{ __html: entry.body }}
                   />
                 )}

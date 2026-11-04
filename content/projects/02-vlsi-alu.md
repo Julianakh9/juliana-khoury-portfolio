@@ -1,7 +1,7 @@
 ---
 title: "4-bit VLSI Arithmetic Logic Unit"
 description: "Designed and implemented a registered 4-bit VLSI Arithmetic Logic Unit as part of a team using Cadence Virtuoso and GPDK045 technology, from schematic design through physical-layout verification."
-order: 2
+order: 3
 technologies:
   - "Cadence Virtuoso"
   - "VLSI"
