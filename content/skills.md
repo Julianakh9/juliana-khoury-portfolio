@@ -13,6 +13,9 @@ categories:
       - "Object-Oriented Programming"
       - "Debugging"
       - "API Fundamentals"
+      - "Test Automation"
+      - "Unit & Integration Testing"
+      - "Network Protocols (TCP/UDP, ICMP/ARP)"
 
   - label: "Digital & Hardware"
     skills:
@@ -32,6 +35,10 @@ categories:
       - "ModelSim"
       - "MATLAB"
       - "PSpice"
+      - "pytest"
+      - "Scapy"
+      - "GitHub Actions"
+      - "CI/CD"
 
   - label: "AI Engineering"
     skills:
