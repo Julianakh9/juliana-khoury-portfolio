@@ -1,21 +1,27 @@
 ---
 title: "NetVerify — Network Verification & Test Automation"
-status: "In Progress"
-description: "An in-progress software engineering project focused on developing a modular Python framework for automated Linux network verification. The project explores reusable software components, network testing, failure analysis, and test automation."
+description: "Developed and released a modular Python framework for automated network verification, fault injection, failure diagnostics, and recovery testing. Implemented TCP/UDP checks, Scapy-based ICMP/ARP verification, and isolated Linux network testing with automated pytest and GitHub Actions validation."
 order: 2
+repoUrl: "https://github.com/Julianakh9/NetVerify"
 technologies:
   - "Python"
-  - "Object-Oriented Programming"
+  - "OOP"
   - "pytest"
   - "Linux"
-  - "Bash"
-  - "iproute2"
+  - "TCP/UDP"
+  - "ICMP/ARP"
   - "Scapy"
-  - "Git & GitHub"
+  - "Network Namespaces"
+  - "iproute2"
+  - "Git"
+  - "GitHub Actions"
+  - "CI/CD"
 ---
 
-Independent software engineering project, currently in the planning and initial development stage. The architecture, technical scope, and technology choices have been defined.
+Independent software engineering project, officially released as [v0.2.0 on GitHub](https://github.com/Julianakh9/NetVerify/releases/tag/v0.2.0).
 
-Planned scope includes creating and configuring virtual Linux networking environments, building reusable Python components for network configuration and testing, running automated tests with pytest, validating connectivity with ARP and ICMP traffic, simulating network failures and recovery scenarios, and collecting logs and diagnostics to investigate test failures.
+NetVerify uses a modular architecture with reusable Python verification APIs. It provides TCP connectivity and UDP echo verification, plus packet-level ICMP Echo and ARP verification using Scapy, which is an optional dependency and is not bundled with NetVerify.
 
-The technologies listed reflect the project’s planned technical scope.
+Tests run in isolated Linux network namespaces connected by virtual Ethernet interfaces. The framework supports controlled network fault injection with recovery monitoring, structured failure diagnostics, and JSON reporting. A command-line interface covers the core TCP and UDP checks. Packet-level execution follows a least-privilege model using CAP_NET_RAW.
+
+Automated verification uses pytest and GitHub Actions. 640 tests passed on each of Python 3.11, 3.12, and 3.13. 21 Linux integration tests passed, including 11 packet-level tests.
