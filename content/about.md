@@ -1,6 +1,6 @@
 I’m a Junior Software Engineer with a B.Sc. in Electrical Engineering from Tel Aviv University, with a strong foundation in Python, C, algorithms, digital systems, and engineering problem solving.
 
-I’m currently working within an engineering team on a project for Hasoub Labs, contributing to requirements, technical specifications, architecture decisions, data models, development tasks, and AI-native system design.
+As part of the Hasoub Labs AI Engineering Bootcamp, I’m contributing to Wasla OS, an AI-native talent placement team project, focusing on technical specifications, system design, data models, and explainable matching workflows.
 
 My Electrical Engineering studies introduced me to verification through digital design, functional simulation, timing analysis, and physical-design checks on a team ALU project. That background shaped my interest in software verification and validation, test automation, debugging, and system-level testing.
 
